@@ -1,4 +1,12 @@
+/*
+ * 
+ */
 package com.servian.hackathon.usermodeling;
+
+/**
+ * @author abdulkareem {@literal <abdulkareem.nalband@globalsoft.com>}
+ *
+ */
 
 import java.io.IOException;
 import java.net.URI;
@@ -10,10 +18,21 @@ import org.apache.http.entity.ContentType;
 import com.ibm.json.java.JSONArray;
 import com.ibm.json.java.JSONObject;
 
+/**
+ * Inerfaces with IBM WATSON User Modeling Services
+ */
 public class Profiler {
+
+	/** The executor. */
 	private Executor executor = Executor.newInstance().auth(Config.username,
 			Config.password);
 
+	/**
+	 * Generates profile based on input
+	 *
+	 * @param input user generated content
+	 * @return profile of personality traits
+	 */
 	public String profile(String input) {
 		JSONObject contentItem = new JSONObject();
 		contentItem.put("userid", UUID.randomUUID().toString());
@@ -35,7 +54,6 @@ public class Profiler {
 		try {
 			profileURI = new URI(Config.baseURL + "api/v2/profile").normalize();
 		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -45,13 +63,21 @@ public class Profiler {
 		try {
 			return executor.execute(profileRequest).returnContent().asString();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		return "";
 	}
 
+	/**
+	 * Vizualize.
+	 *
+	 * @param profile
+	 *            genereted by {@link #profile(String) profile} method.
+	 * @param image
+	 *            link to Image URI
+	 * @return html/svg of profile visualization
+	 */
 	public String vizualize(String profile, String image) {
 		URI vizURI = null;
 		try {
@@ -59,7 +85,6 @@ public class Profiler {
 					+ String.format("api/v2/visualize?w=%d&h=%d&imgurl=%s",
 							900, 900, image)).normalize();
 		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -69,7 +94,6 @@ public class Profiler {
 							ContentType.APPLICATION_JSON)).returnContent()
 					.asString();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
