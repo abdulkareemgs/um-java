@@ -1,6 +1,6 @@
 applications:
 - services:
   - um-service
-  name: um-java
+  name: um-java-gs
   path: webApp.war
   memory: 512M

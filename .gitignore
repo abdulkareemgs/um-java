@@ -2,3 +2,6 @@ bin/
 WebContent/WEB-INF/classes
 build/
 /webApp.war
+.DS_Store
+/.DS_Store
+.DS_Store

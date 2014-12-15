@@ -5,8 +5,8 @@
     <property environment="env"/>
     <property name="srcDir" value="."/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.5"/>
-    <property name="source" value="1.5"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
     <property name="ARCHIVE_DIR" value="."/>
 	<property name="LIB_DIR" value="./lib" />
 	<property name="WEB_INF_LIB_DIR" value="./WebContent/WEB-INF/lib" />
