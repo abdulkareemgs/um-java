@@ -5,8 +5,8 @@
     <property environment="env"/>
     <property name="srcDir" value="."/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.8"/>
-    <property name="source" value="1.8"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
     <property name="ARCHIVE_DIR" value="."/>
 	<property name="LIB_DIR" value="./lib" />
 	<property name="WEB_INF_LIB_DIR" value="./WebContent/WEB-INF/lib" />
@@ -43,7 +43,7 @@
     </target>
  
    <target name="build-war" depends="build-project">
-	  <war destfile="${ARCHIVE_DIR}/${warname}" webxml="WebContent/WEB-INF/web.xml">
+	  <war destfile="${ARCHIVE_DIR}/${warname}" needxmlfile='false'>
 	  	<webinf dir="WebContent/WEB-INF" />
 	  	<zipfileset dir="src" prefix="WEB-INF/src" />
 	  	<fileset dir="WebContent">

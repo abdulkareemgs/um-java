@@ -15,7 +15,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="lib/com.ibm.websphere.appserver.api.json_1.0.2.jar"/>
 	<classpathentry kind="lib" path="lib/com.ibm.ws.javaee.servlet.3.0_1.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/com.ibm.json4j_1.0.1.jar"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>

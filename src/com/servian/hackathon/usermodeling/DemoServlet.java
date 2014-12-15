@@ -1,4 +1,4 @@
-package com.ibm.cloudoe.samples;
+package com.servian.hackathon.usermodeling;
 
 import java.io.IOException;
 import java.net.URI;
@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,7 +30,7 @@ import org.apache.http.util.EntityUtils;
 
 import com.ibm.json.java.JSONArray;
 import com.ibm.json.java.JSONObject;
-
+@WebServlet("/demo")
 @MultipartConfig
 public class DemoServlet extends HttpServlet {
 	private static Logger logger = Logger.getLogger(DemoServlet.class.getName());
@@ -38,9 +39,9 @@ public class DemoServlet extends HttpServlet {
 	private String serviceName = "user_modeling";
 	
 	// If running locally complete the variables below with the information in VCAP_SERVICES
-	private String baseURL = "<service url>";
-	private String username = "<service username>";
-	private String password = "<service password>";
+	private String baseURL = null;
+	private String username = null;
+	private String password = null;
 		
 	/**
 	 * Forward the request to the index.jsp file
